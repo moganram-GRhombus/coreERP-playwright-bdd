@@ -1,0 +1,37 @@
+
+QA AUTOMATION  |  PROOF OF CONCEPT
+Known Limitations
+CoreERP  -  Procure-to-Approve
+
+DocumentKnown Limitations, Assumptions and Open ItemsApplication under testCoreERP (practice ERP web application)Related documentsApplication & Domain Understanding; Critical Workflows; Test Scenarios (Excel)Version1.0Date13 October 2026StatusReady for team lead review
+
+1. Purpose
+No proof of concept is complete without an honest statement of what it does not yet cover, what has been assumed, and what could make results unreliable. This document lists those points so that reviewers know exactly how far the findings can be trusted and what remains to be done.
+How to use this document
+• Section 2 lists behaviours we have not yet seen in the application. The related test cases are marked "Verify" in the Test Scenarios workbook.
+• Section 3 lists limits that come from the test environment itself.
+• Sections 4 and 5 state what is excluded from this POC and how the main risks are handled.2. Open Items to Confirm
+These are things that were not visible in the screens explored so far. Each has a working assumption so that work can continue, and each will be confirmed during the first execution.
+IDAreaWhat is not yet knownWorking assumptionImpactAffectsL-01InventoryTest identifiers of the search box, warehouse list, page-size list, Low-stock check box, rows and Reorder linkLocate by placeholder text, visible label and roleMediumTC-P04 to P07L-02LoginExact error message after a wrong password or unknown userAn error message is shown and the user stays on the login screenMediumTC-N01, N03L-03LoginHow empty credentials are handled (browser prompt or application message)Application keeps the user on the login screenLowTC-N02L-04New POIdentifiers of the remove-line button and the notes boxRemove button inside the line; notes is the only multi-line boxMediumTC-E08, E10L-05New POIdentifiers of the 7-day and 30-day buttonsFollow the same naming as the 14-day buttonLowTC-E11 and PO creationL-06New POWhat happens after "Save as draft" (which page opens, any confirmation)The PO is saved; result is verified from the PO listMediumTC-P10L-07New POWhether "Save as draft" accepts an empty or partly filled formIt applies the same checks as Submit (the red banner says "before saving")MediumTC-N09L-08New PORules for quantity: 0, negative, decimal, text, very largeInvalid quantities are blocked or ignored; totals never go negativeHighTC-E01 to E05L-09New PORules for unit price: 0, blank, many decimals; how GST is roundedPrice must be above 0; GST rounded to two decimalsHighTC-E06, E07L-10New POWhether the same item may appear on two linesAllowed, each line calculated independentlyLowTC-E09L-11ApprovalsWhether Reject asks for a reason or confirmationReject acts immediatelyMediumTC-P15L-12DashboardApproved spend after an approval, and what "this month" meansIncreases by the PO total; based on the approval dateMediumTC-P14L-13InventoryReorder level that triggers the Low badge, and where the Reorder link leadsThreshold differs per item; Reorder opens a pre-filled PO (not tested)LowTC-P07L-14RolesWhether a manager may create a purchase orderNot tested in this POCLowNoneL-15DraftWhether a saved draft can be reopened and submitted laterPossible but not testedLowFutureL-16SessionWhat happens when a protected page is opened without signing inUser is redirected to loginMediumTC-N11
+Impact rating
+High: the expected result of a test depends on it. Medium: locator or wording must be adjusted after first run. Low: minor or out-of-scope.3. Environment and Technical Limitations
+LimitationWhy it mattersHow the POC copesShared, persistent dataEvery PO created stays in the system. PO numbers and dashboard figures keep changing from run to run.Tests read the new PO number after submission and compare figures before and after, never against fixed totals.No data clean-upThe application offers no delete option, and the POC has no database or service access.Test data is created fresh each run. The sandbox may accumulate many POs over time.Order-dependent workflowsThe manager can only approve what the buyer submitted earlier.These scenarios run in sequence in a single worker. They are not suitable for parallel execution.Parallel runs collideTwo runs approving from the same queue at once may act on each other's POs.Run workflow tests on one worker; read-only tests may run in parallel.Public sandbox siteIt is a third-party site. Downtime, slowness, resets or design changes may fail tests that are not at fault.Retry on failure, keep traces and screenshots, and review failures before concluding a defect.Time-based figures"Approved spend this month" depends on the calendar. A new month may change the baseline.Spend is checked as a difference, not an absolute value.Currency formattingAmounts use the rupee symbol and lakh grouping.A helper converts text to numbers; formatting itself is checked in a few tests only.Browser differencesChromium, Firefox and WebKit may handle drop-downs and number fields differently.Tests use user-visible actions; browser-specific failures are logged as findings.Header AI coach widgetIt is paused and can overlap content.Out of scope and ignored by the tests.Login stored in the browserNot confirmed how the session is kept.Each role uses a fresh browser context to avoid mixing sessions.4. Scope Exclusions
+Not covered by this proof of concept:
+• Performance, load and stress testing.
+• Security testing (injection, session hijacking, password policy). Only role-based access is checked.
+• Accessibility, keyboard navigation and screen reader behaviour.
+• Visual regression, theme switching (light/dark) and mobile or tablet layouts.
+• Direct service (API) and database testing.
+• Reorder flow from low-stock items, inventory sorting and pagination details.
+• Continuous integration pipeline, repository hosting and demo preparation (excluded from the agreed scope).
+5. Risks and Mitigations
+RiskLikelihoodEffectMitigationExpected results for edge cases (L-08, L-09) turn out to be wrongHighSeveral edge tests fail for the wrong reasonRun each edge case once by hand first, then lock the assertion to the real behaviour.A required locator is missing or unstableMediumInventory and edge tests need reworkPrefer test identifiers; fall back to roles and labels; keep all locators inside page objects so changes happen in one place.Sandbox data is reset or changed during a runMediumWorkflow tests lose their POCreate the PO inside the same scenario; avoid depending on seeded data.Flaky timing in dynamic totalsLowIntermittent failuresUse automatic waiting and assertions that retry; no fixed pauses.Two testers run the suite at the same timeMediumQueue counts disagree with expectationsAssert on the specific PO, not on total queue size, where possible.6. Recommended Next Steps
+#ActionResolves1Run each "Verify" scenario once by hand and note the exact behaviour and messages.L-02, L-03, L-07 to L-12, L-162Capture page source for the inventory controls, remove-line button, notes box and the 7- and 30-day buttons.L-01, L-04, L-053Record the page shown after "Save as draft" and after "Reject".L-06, L-114Update the Test Scenarios workbook and this document, then lock the assertions in code.All
+CoreERP  |  Known Limitations
+
+CoreERP  |  Playwright BDD Proof of Concept	Page  of 
+
+
+
+
+

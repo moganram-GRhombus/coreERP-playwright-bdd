@@ -1,0 +1,28 @@
+{
+  "name": "coreerp-playwright-bdd",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:chromium": "bddgen && playwright test --project=chromium",
+    "test:firefox": "bddgen && playwright test --project=firefox",
+    "test:webkit": "bddgen && playwright test --project=webkit",
+    "test:smoke": "bddgen && playwright test --grep @smoke",
+    "test:positive": "bddgen && playwright test --grep @positive",
+    "test:negative": "bddgen && playwright test --grep @negative",
+    "test:edge": "bddgen && playwright test --grep @edge",
+    "test:validation": "bddgen && playwright test --grep @validation",
+    "test:wf1": "bddgen && playwright test --grep @WF-1",
+    "test:wf2": "bddgen && playwright test --grep @WF-2",
+    "test:wf3": "bddgen && playwright test --grep @WF-3",
+    "test:wf4": "bddgen && playwright test --grep @WF-4",
+    "test:wf5": "bddgen && playwright test --grep @WF-5",
+    "test:headed": "bddgen && playwright test --headed",
+    "report": "npx playwright show-report",
+    "codegen": "npx playwright codegen https://www.practiceqaautomation.com/apps/erp"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "playwright-bdd": "^9.2.1"
+  }
+}

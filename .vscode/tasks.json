@@ -1,0 +1,501 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Phase2 chromium verification",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --grep \"@TC-P03|@TC-P04|@TC-P05|@TC-P06|@TC-P07|@TC-P08|@TC-P19\" --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Phase2 chromium verification",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --grep '@TC-P03|@TC-P04|@TC-P05|@TC-P06|@TC-P07|@TC-P08|@TC-P19' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "quote-test",
+			"type": "shell",
+			"command": "Write-Host '@TC-P03`|@TC-P04'",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Phase2 chromium verification",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --grep '@TC-P03`|@TC-P04`|@TC-P05`|@TC-P06`|@TC-P07`|@TC-P08`|@TC-P19' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Phase2 chromium verification",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P03','@TC-P04','@TC-P05','@TC-P06','@TC-P07','@TC-P08','@TC-P19') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase2_verify_2026",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P03','@TC-P04','@TC-P05','@TC-P06','@TC-P07','@TC-P08','@TC-P19') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "tmp_lowstock_verify",
+			"type": "shell",
+			"command": "node .\\tmp-lowstock-verify.js",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "tmp_lowstock_verify",
+			"type": "shell",
+			"command": "node .\\tmp-lowstock-verify.js",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase2_verify_pass_2026",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P03','@TC-P04','@TC-P05','@TC-P06','@TC-P07','@TC-P08','@TC-P19') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase2_verify_final_2026",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P03','@TC-P04','@TC-P05','@TC-P06','@TC-P07','@TC-P08','@TC-P19') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_totals_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P09','@TC-P11','@TC-P12') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_totals_chromium_retry",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P09','@TC-P11','@TC-P12') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_totals_chromium_retry2",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P09','@TC-P11','@TC-P12') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_validation_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P10','@TC-N05','@TC-N06','@TC-N07','@TC-N08','@TC-N09') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_edges_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-E01','@TC-E02','@TC-E03','@TC-E04','@TC-E05','@TC-E06','@TC-E07','@TC-E08','@TC-E09','@TC-E10','@TC-E11') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_full_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P09','@TC-P10','@TC-P11','@TC-P12','@TC-N05','@TC-N06','@TC-N07','@TC-N08','@TC-N09','@TC-E01','@TC-E02','@TC-E03','@TC-E04','@TC-E05','@TC-E06','@TC-E07','@TC-E08','@TC-E09','@TC-E10','@TC-E11') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_price_boundary_retry",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-E06' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_price_boundary_retry2",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-E06' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_final_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P09','@TC-P10','@TC-P11','@TC-P12','@TC-N05','@TC-N06','@TC-N07','@TC-N08','@TC-N09','@TC-E01','@TC-E02','@TC-E03','@TC-E04','@TC-E05','@TC-E06','@TC-E07','@TC-E08','@TC-E09','@TC-E10','@TC-E11') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "bdd_hook_api_check",
+			"type": "shell",
+			"command": "node -e \"const { createBdd } = require('playwright-bdd'); console.log(Object.keys(createBdd()).sort().join(', '));\"",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "bdd_hook_api_check_retry",
+			"type": "shell",
+			"command": "node -e 'const { createBdd } = require(\"playwright-bdd\"); console.log(Object.keys(createBdd()).sort().join(\", \"));'",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf1_chromium",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf1_chromium_retry",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf1_chromium_retry2",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf1_chromium_retry3",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf1_chromium_retry4",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf2_chromium",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P15' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf3_chromium",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep 'Buyer submits a multi-line price override order' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf3_chromium_retry",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep 'Buyer submits a multi-line price override order' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf3_chromium_retry2",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep 'Buyer submits a multi-line price override order' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_remaining_bddgen_check",
+			"type": "shell",
+			"command": "npx bddgen",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_remaining_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-N04','@TC-N10','@TC-N11','@TC-E12','@TC-P18') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_n04_chromium_retry",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-N04' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_final_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P13','@TC-P15','Buyer submits a multi-line price override order','@TC-N04','@TC-N10','@TC-N11','@TC-E12') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "current_test_list",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_case_split_chromium",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($tag in '@TC-P13','@TC-P14','@TC-P15','@TC-P16','@TC-P18','@TC-N12','@TC-P12') { node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $tag --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf3_recheck",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P12' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_wf3_recheck2",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep '@TC-P12' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_crossbrowser_context",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($project in 'firefox','webkit') { node .\\node_modules\\@playwright\\test\\cli.js test --project=$project --grep '@TC-P13' --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "install_firefox_webkit",
+			"type": "shell",
+			"command": "npx playwright install firefox webkit",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_crossbrowser_context_retry",
+			"type": "shell",
+			"command": "npx bddgen; foreach ($project in 'firefox','webkit') { node .\\node_modules\\@playwright\\test\\cli.js test --project=$project --grep '@TC-P13' --reporter=list; }",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_firefox_context_retry",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=firefox --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_firefox_context_retry2",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=firefox --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_firefox_context_retry3",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=firefox --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_webkit_context_final",
+			"type": "shell",
+			"command": "npx bddgen; node .\\node_modules\\@playwright\\test\\cli.js test --project=webkit --grep '@TC-P13' --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_requested_chromium",
+			"type": "shell",
+			"command": "npx bddgen; $pattern = '@TC-P13|@TC-P14|@TC-P15|@TC-P16|@TC-P18|@TC-N04|@TC-N10|@TC-N11|@TC-N12|@TC-E12|@WF-1|@WF-2|@WF-3'; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $pattern --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_requested_chromium",
+			"type": "shell",
+			"command": "npx bddgen; $pattern = '@TC-P09|@TC-P10|@TC-P11|@TC-P12|@TC-N05|@TC-N06|@TC-N07|@TC-N08|@TC-N09|@TC-E01|@TC-E02|@TC-E03|@TC-E04|@TC-E05|@TC-E06|@TC-E07|@TC-E08|@TC-E09|@TC-E10|@TC-E11'; node .\\node_modules\\@playwright\\test\\cli.js test --project=chromium --grep $pattern --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "full_suite_chromium_43",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase4_exact_list_output",
+			"type": "shell",
+			"command": "npx bddgen; $pattern = '@TC-P13|@TC-P14|@TC-P15|@TC-P16|@TC-P18|@TC-N04|@TC-N10|@TC-N11|@TC-N12|@TC-E12|@WF-1|@WF-2|@WF-3'; npx playwright test --project=chromium --grep $pattern --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase3_exact_list_output",
+			"type": "shell",
+			"command": "npx bddgen; $pattern = '@TC-P09|@TC-P10|@TC-P11|@TC-P12|@TC-N05|@TC-N06|@TC-N07|@TC-N08|@TC-N09|@TC-E01|@TC-E02|@TC-E03|@TC-E04|@TC-E05|@TC-E06|@TC-E07|@TC-E08|@TC-E09|@TC-E10|@TC-E11'; npx playwright test --project=chromium --grep $pattern --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_all_browsers",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "isolate_firefox_p13",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --grep '@TC-P13' --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_firefox_serial",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_firefox_p16_retry",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --grep '@TC-P16' --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_firefox_all_serial_retry",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_firefox_e12_retry",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --grep '@TC-E12' --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_firefox_all_serial_final",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=firefox --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_webkit_all_serial",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=webkit --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_chromium_all_serial",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "phase5_chromium_default_reporters",
+			"type": "shell",
+			"command": "npx bddgen; npx playwright test --project=chromium --workers=1",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "verify_bdd_step_generation",
+			"type": "shell",
+			"command": "npx bddgen",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "verify_tc_p15_after_settings",
+			"type": "shell",
+			"command": "npx playwright test --project=chromium --grep '@TC-P15' --workers=1 --reporter=list",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}
