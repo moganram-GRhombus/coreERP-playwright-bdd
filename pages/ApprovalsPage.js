@@ -26,7 +26,6 @@ class ApprovalsPage extends BasePage {
   reviewLink(poNumber) {
     return this.orderCard(poNumber).getByRole('link', { name: 'Review' });
   }
-
   async readAwaitingCount() {
     const text = await this.awaitingCount.innerText();
     return Number(text.match(/\d+/)[0]);
