@@ -1,5 +1,6 @@
 Feature: CoreERP dashboard
 
+
   @TC-P03 @positive @validation
   Scenario: Buyer sees the dashboard KPI summary
     Given the buyer is logged in
