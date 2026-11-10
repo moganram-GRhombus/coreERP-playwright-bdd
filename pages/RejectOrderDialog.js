@@ -5,7 +5,7 @@ class RejectOrderDialog extends BasePage {
     super(page);
     this.dialog = page.getByRole('dialog');
     this.reason = this.dialog.getByRole('textbox', { name: 'Reason for the buyer' });
-    this.rejectButton = this.dialog.getByRole('button', { name: 'Reject order' });
+    this.rejectButton = this.dialog.getByRole('button', { name: 'Rejectorder' });
     this.minimumReasonMessage = this.dialog.getByText('Explain the rejection (10+ characters)', { exact: true });
   }
 
